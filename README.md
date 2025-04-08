@@ -102,6 +102,10 @@ PaletteFactory.editPalette({
 - `TRIADIC`
 - `COMPOUND`
 
+## 👀 Real example 🌈
+
+🫵 can see and test the funcionalities 👉[here](https://nidea-colors.netlify.app/)👈.
+
 ## 🛠️ Custom Types
 
 Check out the available types in the `types.ts` file, such as:
@@ -118,6 +122,14 @@ This library includes built-in validations for:
 - Invalid hexadecimal colors.
 - Invalid number of colors in the palette.
 - Missing or incorrect parameters during generation.
+
+## 🔧 Known issues
+
+- This cromatic circle is based on RGB color model,
+  so the colors generated will be different
+  from the ones you can see on traditional color pickers.
+  > Traditional pickers are based on additive color model,
+  > as RYB (🟥​🟨​🟦​), the goal its improve it later.
 
 ---
 
