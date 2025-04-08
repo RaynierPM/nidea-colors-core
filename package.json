@@ -1,0 +1,55 @@
+{
+  "name": "nidea-colors-core",
+  "version": "1.0.0",
+  "description": "A great package to mix colors and get funny!",
+  "keywords": [
+    "colors",
+    "mixer",
+    "palettes",
+    "chromatic circle"
+  ],
+  "homepage": "https://github.com/RaynierPM/nidea-colors-core#readme",
+  "bugs": {
+    "url": "https://github.com/RaynierPM/nidea-colors-core/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RaynierPM/nidea-colors-core.git"
+  },
+  "license": "MIT",
+  "author": "RaynierPM",
+  "type": "module",
+  "scripts": {
+    "publish:package": "rm -rf dist/ && mkdir dist/ && tsc && npm publish",
+    "check:styles": "prettier . --check",
+    "fix:styles": "prettier . --write"
+  },
+  "devDependencies": {
+    "prettier": "^3.5.3",
+    "typescript": "^5.8.2"
+  },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./ColorMixer": {
+      "import": "./dist/core/ColorMixer/index.js",
+      "require": "./dist/core/ColorMixer/index.js",
+      "types": "./dist/core/ColorMixer/index.d.ts"
+    },
+    "./errors": {
+      "import": "./dist/core/errors/index.js",
+      "require": "./dist/core/errors/index.js",
+      "types": "./dist/core/errors/index.d.ts"
+    },
+    "./utils": {
+      "import": "./dist/core/utils/index.js",
+      "require": "./dist/core/utils/index.js",
+      "types": "./dist/core/utils/index.d.ts"
+    }
+  }
+}

@@ -1,0 +1,7 @@
+# Dirs
+node_modules/
+dist/
+.vscode/
+
+# files
+.env*
