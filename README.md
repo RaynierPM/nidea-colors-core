@@ -1,79 +1,79 @@
-# 🎨 Color Palette Generator
+# 🎨 nidea-colors
 
-Una herramienta escrita en TypeScript para generar, manipular y serializar paletas de colores. Ideal para proyectos creativos que requieren control y aleatoriedad sobre la composición cromática.
+A tool written in TypeScript for generating, manipulating, and serializing color palettes. Ideal for creative projects that require control and randomness over color composition.
 
-## 🚀 Instalación
+## 🚀 Installation
 
 ```bash
-npm install color-palette-generator
+npm install nidea-colors
 ```
 
-## 📆 Características
+## 🗖️ Features
 
-- Creación de colores a partir de valores RGB(A) o hexadecimal.
-- Generación aleatoria de colores.
-- Serialización y deserialización de paletas.
-- Edición de paletas: agregar o remover colores.
-- Validaciones incluidas para evitar errores comunes.
-- Soporte para distintos tipos de paletas: monocromáticas, análogas, complementarias, etc.
+- Create colors from RGB(A) or hexadecimal values.
+- Generate random colors.
+- Serialize and deserialize palettes.
+- Edit palettes: add or remove colors.
+- Built-in validations to avoid common mistakes.
+- Support for different palette types: monochromatic, analogous, complementary, etc.
 
-## 🔧 Uso básico
+## 🔧 Basic Usage
 
-### Crear un color manualmente
+### Create a color manually
 
 ```ts
-import { Color } from "color-palette-generator";
+import { Color } from "nidea-colors";
 
-const rojo = new Color({ red: 255, green: 0, blue: 0 });
-console.log(rojo.hexColor); // ff0000
+const red = new Color({ red: 255, green: 0, blue: 0 });
+console.log(red.hexColor); // ff0000
 ```
 
-### Crear un color desde un valor hexadecimal
+### Create a color from a hexadecimal value
 
 ```ts
-const azul = Color.fromHexColor("0000ff");
+const blue = Color.fromHexColor("0000ff");
 ```
 
-### Generar un color aleatorio
+### Generate a random color
 
 ```ts
 const randomColor = Color.generateRandomColor();
 ```
 
-### Crear una paleta
+### Create a palette
 
 ```ts
-import { Palette } from "color-palette-generator";
+import { Palette } from "nidea-colors";
 
-const paleta = new Palette([rojo, azul]);
-console.log(paleta.toString()); // JSON con los colores en hexadecimal
+const palette = new Palette([red, blue]);
+console.log(palette.toString()); // JSON with colors in hexadecimal
 ```
 
-### Agregar o eliminar colores
+### Add or remove colors
 
 ```ts
-paleta.addColor(randomColor);
-paleta.removeColor(rojo);
+palette.addColor(randomColor);
+palette.removeColor(red);
 ```
 
-### Clonar una paleta
+### Clone a palette
 
 ```ts
-const copia = paleta.clone();
+const copy = palette.clone();
 ```
 
-## 🧪 Generador de Paletas
+## 🧪 Palette Generator
 
-Puedes usar `PaletteFactory` para generar automáticamente paletas personalizadas:
+You can use `PaletteFactory` to automatically generate custom palettes:
 
 ```ts
-import { PaletteFactory, PaletteType } from "color-palette-generator";
+import { PaletteFactory, PaletteType } from "nidea-colors";
 
 const factory = new PaletteFactory();
 
 const generator = factory.getPaletteGenerator();
 
-const paleta = generator({
+const palette = generator({
   paletteType: PaletteType.MONOCHROMATIC,
   lockedColors: [],
   colorsQuantity: 4,
@@ -81,10 +81,10 @@ const paleta = generator({
 });
 ```
 
-## ✏️ Editar paletas
+## ✏️ Edit palettes
 
 ```ts
-import { PaletteFactory, PaletteEditType } from "color-palette-generator";
+import { PaletteFactory, PaletteEditType } from "nidea-colors";
 
 PaletteFactory.editPalette({
   type: PaletteEditType.ADD_COLOR,
@@ -93,7 +93,7 @@ PaletteFactory.editPalette({
 });
 ```
 
-## 📚 Tipos de paletas soportadas
+## 📚 Supported palette types
 
 - `RANDOM`
 - `MONOCHROMATIC`
@@ -102,25 +102,25 @@ PaletteFactory.editPalette({
 - `TRIADIC`
 - `COMPOUND`
 
-## 🛠️ Tipos personalizados
+## 🛠️ Custom Types
 
-Consulta los tipos disponibles en el archivo `types.ts`, como:
+Check out the available types in the `types.ts` file, such as:
 
 - `PaletteType`
 - `PaletteEditType`
 - `PaletteEditionOptions`
 - `generatePaletteOptions`
 
-## ⚠️ Validaciones
+## ⚠️ Validations
 
-Esta librería incluye validaciones integradas para:
+This library includes built-in validations for:
 
-- Colores hexadecimales inválidos.
-- Número inválido de colores en la paleta.
-- Parámetros faltantes o incorrectos en la generación.
+- Invalid hexadecimal colors.
+- Invalid number of colors in the palette.
+- Missing or incorrect parameters during generation.
 
 ---
 
-## 📄 Licencia
+## 📄 License
 
 MIT
