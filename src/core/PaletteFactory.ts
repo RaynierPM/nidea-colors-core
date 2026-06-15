@@ -115,6 +115,5 @@ export class PaletteFactory {
     if (lockedColors > colorsQuantity) {
       throw new InvalidParametersError();
     }
-    console.log("WTF");
   }
 }
