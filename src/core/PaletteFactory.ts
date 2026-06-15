@@ -59,14 +59,11 @@ export class PaletteFactory {
         saturation,
       } = options;
 
-      this.validatePaletteGeneration(
-        {
-          colorsQuantity: colorsQuantity,
-          lockedColors: lockedColors.length,
-          baseColor: baseColor,
-        },
-        paletteType !== PaletteType.RANDOM,
-      );
+      this.validatePaletteGeneration({
+        colorsQuantity: colorsQuantity,
+        lockedColors: lockedColors.length,
+        baseColor: baseColor,
+      });
 
       const colorMixerOption: ColorMixerOptions = {
         baseColor: baseColor || Color.generateRandomColor(),
@@ -118,9 +115,6 @@ export class PaletteFactory {
     if (lockedColors > colorsQuantity) {
       throw new InvalidParametersError();
     }
-
-    if (needBaseColor && !baseColor) {
-      throw new InvalidParametersError();
-    }
+    console.log("WTF");
   }
 }

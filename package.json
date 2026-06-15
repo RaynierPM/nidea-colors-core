@@ -1,6 +1,6 @@
 {
   "name": "nidea-colors",
-  "version": "1.0.0",
+  "version": "1.2.0",
   "description": "A great package to mix colors and get funny!",
   "keywords": [
     "colors",
@@ -20,6 +20,7 @@
   "author": "RaynierPM",
   "type": "module",
   "scripts": {
+    "build": "npm run check:styles && tsc",
     "publish:package": "rm -rf dist/ && mkdir dist/ && tsc && npm publish",
     "check:styles": "prettier . --check",
     "fix:styles": "prettier . --write"
